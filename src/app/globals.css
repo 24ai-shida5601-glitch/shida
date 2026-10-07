@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-luxury-black: #050504;
+  --color-luxury-secondary: #0b0a08;
+  --color-luxury-deep: #020202;
+  --color-luxury-ivory: #e9e2d4;
+  --color-luxury-gold: #b99a5b;
+  --color-luxury-bright-gold: #c7aa68;
+  --color-luxury-muted: #858078;
+  --color-luxury-green: #173d2c;
+  --color-luxury-emerald: #0c4a35;
+  --color-luxury-turquoise: #4b9d9e;
+}
+
+@layer base {
+  :root {
+    --background: #050504;
+    --foreground: #e9e2d4;
+  }
+  
+  html {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 300;
+  }
+  
+  /* Lenis smooth scrolling recommended css */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
